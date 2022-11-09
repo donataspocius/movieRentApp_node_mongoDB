@@ -1,0 +1,48 @@
+### User signup (create new user)
+POST http://localhost:5002/api/users/signup
+Content-Type: application/json
+
+{
+    "name_surname": "Jack Sparrow",
+    "email": "jack@email.com",
+    "password": "pasw"
+}
+
+### User login
+POST http://localhost:5002/api/users/login
+Content-Type: application/json
+
+{
+    "email": "jack@email.com",
+    "password": "pasw"
+}
+
+### Create new movie
+POST http://localhost:5002/api/movies
+Content-Type: application/json
+
+{
+    "userId": "636ac92592427919cf2e4a9b",
+    "movie_name": "Pirates",
+    "movie_category": "Action",
+    "movie_rent_price": "3",
+    "is_available": true
+}
+
+### get all movies
+GET http://localhost:5002/api/movies
+
+
+### get user info (movies and orders)
+GET http://localhost:5002/api/users/636ac92592427919cf2e4a9b
+
+### rent a movie / update user and movie status
+PUT http://localhost:5002/api/movies/636ac92592427919cf2e4a9b
+Content-Type: application/json
+
+{
+    "movieOwnerId": "636ab83095b8984efdf66776",
+    "movie_name": "LOTR",
+    "movie_category": "Drama",
+    "movie_rent_price": "7"
+}

@@ -1,0 +1,48 @@
+### User signup (create new user)
+POST http://localhost:5001/api/users/signup
+Content-Type: application/json
+
+{
+    "name_surname": "kkkk Moon",
+    "email": "kkkk@email.com",
+    "password": "pasw"
+}
+
+### User login
+POST http://localhost:5001/api/users/login
+Content-Type: application/json
+
+{
+    "email": "ben@email.com",
+    "password": "pasw"
+}
+
+### Create new movie
+POST http://localhost:5001/api/movies
+Content-Type: application/json
+
+{
+    "userId": "636acee073d86fb82bf11811",
+    "movie_name": "Fight",
+    "movie_category": "Action",
+    "movie_rent_price": "3",
+    "is_available": true
+}
+
+### get all movies
+GET http://localhost:5001/api/movies
+
+
+### get user info (movies and orders)
+GET http://localhost:5001/api/users/636acee073d86fb82bf11811
+
+### rent a movie / update user and movie status
+PUT http://localhost:5001/api/movies/636acee073d86fb82bf11811
+Content-Type: application/json
+
+{
+    "movieOwnerId": "636acaf3019e0aa2936fec49",
+    "movie_name": "Race",
+    "movie_category": "Action",
+    "movie_rent_price": "9"
+}
